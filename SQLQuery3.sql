@@ -93,6 +93,17 @@ select region, sum(popu) from tCity group by region;
 select region, max(area) from tCity group by region having sum(popu)>50
 select region, avg(area) from tCity group by region having avg(area)>=1000;
 
+insert into tCity values('용인', 293, 98, 'y', '경기');
+insert into tStaff values('최동영','개발팀','남','2022-9-13','사원',250,50);
+
+insert into tCity (name, area, popu, metro, region) values('이천', 461, 21, 'y', '경기'),('대구', 883, 248, 'y', '경북'),('영월', 1127, 4, 'n', '강원');
+
+select name,salary into cruetable from tStaff where score >= 80;
+select * from cruetable;
+
+update tStaff set grade='대리' where gender='여';
+update tStaff set salary = 1.1 * salary where depart='영업부';
+
 drop table tCity;
 use master;
 drop database Study;
